@@ -1,0 +1,1442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_vvfOkU5IEeOBXLaT_73OFw">
+  <name xsi:nil="true"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vwy2IE5IEeOBXLaT_73OFw" name="modele" clientDependency="_wEKeEE5IEeOBXLaT_73OFw _wELsME5IEeOBXLaT_73OFw">
+    <packagedElement xmi:type="uml:Class" xmi:id="_vxrm8E5IEeOBXLaT_73OFw" name="Machine">
+      <generalization xmi:id="_v5T48E5IEeOBXLaT_73OFw" general="_vxpKsE5IEeOBXLaT_73OFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vxtcIE5IEeOBXLaT_73OFw" name="Utils">
+      <eAnnotations xmi:id="_vxtcIU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+        <details xmi:id="_vxtcIk5IEeOBXLaT_73OFw" key="documentation" value="Classe utilitaire utilisee par tout le package&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_v5XjUE5IEeOBXLaT_73OFw" visibility="private" importedElement="_v5W8QE5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v5ZYgE5IEeOBXLaT_73OFw" name="randomize" specification="_v5YxcE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v5ZYgU5IEeOBXLaT_73OFw" name="minValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5ZYgk5IEeOBXLaT_73OFw" name="maxValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5Z_kE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		Random r = new Random();
+		return minValue + r.nextInt(maxValue - minValue);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v5cb0E5IEeOBXLaT_73OFw" name="randomizeCoord" specification="_v5b0wE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v5cb0U5IEeOBXLaT_73OFw" name="minValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5cb0k5IEeOBXLaT_73OFw" name="maxValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5cb005IEeOBXLaT_73OFw" type="_vxqY005IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		int x = randomize(minValue, maxValue);
+		int y = randomize(minValue, maxValue);
+		Coord coord = new Coord(x, y);
+		return coord;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_v5YxcE5IEeOBXLaT_73OFw" name="randomize" visibility="public" isStatic="true" method="_v5ZYgE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v5YxcU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5Yxck5IEeOBXLaT_73OFw" key="documentation" value=" Generer un nombre aléatoire&#xA; @param minValue&#xA; @param maxValue&#xA; @return int&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5Yxc05IEeOBXLaT_73OFw" name="minValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5YxdE5IEeOBXLaT_73OFw" name="maxValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5YxdU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5b0wE5IEeOBXLaT_73OFw" name="randomizeCoord" visibility="public" isStatic="true" method="_v5cb0E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v5b0wU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5b0wk5IEeOBXLaT_73OFw" key="documentation" value=" Genere une coordonnee aleatoire&#xA; @param minValue&#xA; @param maxValue&#xA; @return la coordonnee generee automatiquement&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5b0w05IEeOBXLaT_73OFw" name="minValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5b0xE5IEeOBXLaT_73OFw" name="maxValue" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5b0xU5IEeOBXLaT_73OFw" type="_vxqY005IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_vxuDME5IEeOBXLaT_73OFw" name="IGame">
+      <eAnnotations xmi:id="_vxuqQE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+        <details xmi:id="_vxuqQU5IEeOBXLaT_73OFw" key="documentation" value=" Classe qui joue le rele de controleur. &#xA; Elle contrele la validite des actions du joueur. &#xA; Elle sert de lien entre GameView et les autres classes.&#xA; Elle procede en delegant une classe pour la realisation de telle ou telle teche. &#xA; Et elle ne fait quasiment que de la delegation.&#xA; &#xA; @Cons&#xA; Param : &#xA;  - taille &#xA;  - niveau&#xA;  - nom du joueur&#xA;  - &#xA; Post :&#xA;  - creation du joueur &#xA;  - creation du plateau &#xA;  - initialisation du niveau&#xA;"/>
+      </eAnnotations>
+      <ownedOperation xmi:id="_v5mz4E5IEeOBXLaT_73OFw" name="isValidMove">
+        <eAnnotations xmi:id="_v5mz4U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5mz4k5IEeOBXLaT_73OFw" key="documentation" value=" Demande au plateau de verifier que :&#xA; - la case de depart contient bien un pion&#xA; - que le pion appartient au joueur p&#xA; - que la case d'arrivee est vide&#xA; - que la distance est valide&#xA; &#xA; @param p : un joueur donne (homme ou machine)&#xA; @param c1 : coordonnee de la case de depart&#xA; @param c2 : coordonnee de la case d'arrivee&#xA; @return retourne vrai si le deplacement est valide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5mz405IEeOBXLaT_73OFw" name="p" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5mz5E5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5mz5U5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5mz5k5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5opEE5IEeOBXLaT_73OFw" name="getCurrentPlayer">
+        <eAnnotations xmi:id="_v5opEU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5opEk5IEeOBXLaT_73OFw" key="documentation" value=" renvoie le joueur (entre la machine et l'humain) e qui c'est le tour de jouer&#xA; Pour cela elle appelle les methodes itsOwnTurn de player.&#xA; @return Le joueur e qui c'est le tour de jouer.&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5opE05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5vWwE5IEeOBXLaT_73OFw" name="setCurrentPlayer">
+        <eAnnotations xmi:id="_v5vWwU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5vWwk5IEeOBXLaT_73OFw" key="documentation" value=" Ajoute le joueur passe en parametre comme joueur qu a le jeu&#xA; @param p le joueur a qui on veut passer la main&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5vWw05IEeOBXLaT_73OFw" name="p" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5xzAE5IEeOBXLaT_73OFw" name="changeCurrentPlayer">
+        <eAnnotations xmi:id="_v5xzAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5xzAk5IEeOBXLaT_73OFw" key="documentation" value=" Change le joueur courant&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v50PQE5IEeOBXLaT_73OFw" name="getHumanPlayer">
+        <eAnnotations xmi:id="_v50PQU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v50PQk5IEeOBXLaT_73OFw" key="documentation" value=" @return l'instance du joueur humain&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v50PQ05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v52rgE5IEeOBXLaT_73OFw" name="getMachinePlayer">
+        <eAnnotations xmi:id="_v52rgU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v52rgk5IEeOBXLaT_73OFw" key="documentation" value=" @return l'instance de la machine&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v52rg05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v535oE5IEeOBXLaT_73OFw" name="getLevel">
+        <eAnnotations xmi:id="_v535oU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v535ok5IEeOBXLaT_73OFw" key="documentation" value=" @return le niveau de la partie actuelleles exceptions java test&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v535o05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5688E5IEeOBXLaT_73OFw" name="goToNextLevel">
+        <eAnnotations xmi:id="_v57kAE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v57kAU5IEeOBXLaT_73OFw" key="documentation" value=" Verifie que la partie est finie et que l'humain a gagne&#xA; incremente de 1 le niveau&#xA; reconstruit le plateau&#xA; enregistre le plateau chez chaque joueur&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v58LEE5IEeOBXLaT_73OFw" name="itsEndOfTheGame">
+        <eAnnotations xmi:id="_v58LEU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v58LEk5IEeOBXLaT_73OFw" key="documentation" value=" Verifie chez le joueur actuel s'il y a encore des possibilites de jeu &#xA; @return vrai si la partie est finie, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v58LE05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5_OYE5IEeOBXLaT_73OFw" name="getTheWinner">
+        <eAnnotations xmi:id="_v5_OYU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5_OYk5IEeOBXLaT_73OFw" key="documentation" value=" renvoie le joueur qui a le plus de pions.&#xA; Elle appelle la methode de calcul du nombre de pions de chaque joueur.&#xA; @return le gagnant de la partie&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5_OY05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v6CRsE5IEeOBXLaT_73OFw" name="getPlateau">
+        <eAnnotations xmi:id="_v6CRsU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v6CRsk5IEeOBXLaT_73OFw" key="documentation" value=" Obtenir le plateau du jeu&#xA; @return le plateau du jeu&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v6CRs05IEeOBXLaT_73OFw" type="_vx63gE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v6I_YE5IEeOBXLaT_73OFw" name="setPlateau">
+        <eAnnotations xmi:id="_v6JmcE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v6JmcU5IEeOBXLaT_73OFw" key="documentation" value=" Ajoute le plateau du jeu&#xA; @param plateau qui est ele nouveau plateau a ajouter&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v6Jmck5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v6Q7ME5IEeOBXLaT_73OFw" name="currentPlayerPlay">
+        <eAnnotations xmi:id="_v6Q7MU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v6Q7Mk5IEeOBXLaT_73OFw" key="documentation" value=" Methode qui fait joueur le joueur qui a le tour&#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @return vrai si ça a jouer; faux sinon&#xA; @throws InvalidCoord&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v6Q7M05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v6Q7NE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v6Q7NU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vxv4YE5IEeOBXLaT_73OFw" name="Human">
+      <eAnnotations xmi:id="_vxv4YU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+        <details xmi:id="_vxv4Yk5IEeOBXLaT_73OFw" key="documentation" value=" Pas s�r qu'on ait besoin de cette classe. On verra plus tard&#xA;"/>
+      </eAnnotations>
+      <generalization xmi:id="_v6T-gE5IEeOBXLaT_73OFw" general="_vxpKsE5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v6gLwE5IEeOBXLaT_73OFw" name="getName" specification="_v6dvgE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v6gLwU5IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>&#xD;
+		return name;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v6sZAE5IEeOBXLaT_73OFw" name="setName" specification="_v6pVsE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v6sZAU5IEeOBXLaT_73OFw" name="name" type="_vzkdUk5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>&#xD;
+		this.name = name;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_v6dvgE5IEeOBXLaT_73OFw" name="getName" visibility="public" method="_v6gLwE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v6dvgU5IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v6pVsE5IEeOBXLaT_73OFw" name="setName" visibility="public" method="_v6sZAE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v6pVsU5IEeOBXLaT_73OFw" name="name" type="_vzkdUk5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vx63g05IEeOBXLaT_73OFw" name="Game" clientDependency="_v-ukcE5IEeOBXLaT_73OFw _lGkdME5KEeOBXLaT_73OFw _m1ljwE5KEeOBXLaT_73OFw _xcDMIE5KEeOBXLaT_73OFw _HdXuQE5LEeOBXLaT_73OFw">
+      <elementImport xmi:id="_v-vLgE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx8FoE5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v_GX4E5IEeOBXLaT_73OFw" name="isValidMove" specification="_v-_qME5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v_GX4U5IEeOBXLaT_73OFw" name="p" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_GX4k5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_GX405IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_GX5E5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(p.itsOwnPion(c1, plateau) &amp;&amp; plateau.isEmptyCase(c2) 
+				&amp;&amp; plateau.isValidDistance(c1, c2))
+			return true;
+		else return false;
+		//TODO validate
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v_XdoE5IEeOBXLaT_73OFw" name="currentPlayerPlay" specification="_v_SlIE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v_XdoU5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_Xdok5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_Xdo05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(!isValidMove(getCurrentPlayer(), c1, c2)) return false;
+		else {
+			if(c1.getDistance(c2)==0) plateau.moveAndDuplicate(c1, c2);
+			else plateau.moveWithoutDuplicate(c1, c2);
+			return true;
+			//TODO validate
+		}
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v_hOoE5IEeOBXLaT_73OFw" name="getCurrentPlayer" specification="_v_eLUE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v_hOoU5IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(human.itsOwnTurn()) return human;
+		else if(machine.isOwnTurn()) return machine;
+		else return null;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v_vREE5IEeOBXLaT_73OFw" name="setCurrentPlayer" specification="_v_sNwE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v_vREU5IEeOBXLaT_73OFw" name="p" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		p.setOwnTurn(true);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v_4bAE5IEeOBXLaT_73OFw" name="changeCurrentPlayer" specification="_v_0woE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		IPlayer p = null;
+		if(machine.isOwnTurn()) p=machine;
+		if(human.isOwnTurn()) p=human;
+		p.setOwnTurn(false);
+		if(p.getColor()==2) machine.setOwnTurn(true);
+		if(p.getColor()==3) human.setOwnTurn(true);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wAA94E5IEeOBXLaT_73OFw" name="getHumanPlayer" specification="_v_96kE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wABk8E5IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return human;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wAKu4E5IEeOBXLaT_73OFw" name="getMachinePlayer" specification="_wAHrkE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wAKu4U5IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return machine;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wASqsE5IEeOBXLaT_73OFw" name="getLevel" specification="_wAPnYE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wASqsU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return level;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wAbNkE5IEeOBXLaT_73OFw" name="goToNextLevel" specification="_wAXjME5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		// TODO to be performed
+		level++;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wAjJYE5IEeOBXLaT_73OFw" name="itsEndOfTheGame" specification="_wAffAE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wAjJYU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		boolean gameEnd=false;
+		if(!human.hasPossibilitiesOfPlay(plateau)) gameEnd=true;
+		else if(!machine.hasPossibilitiesOfPlay(plateau)) gameEnd=true;
+		else
+			for(int i=0; i&lt;plateau.getPlateau().length; i++)
+				for(int j=0; i&lt;plateau.getPlateau()[i].length; j++)
+					if(plateau.getPlateau()[i][j]==1) 
+						{ gameEnd=false; break; }
+		return gameEnd;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wAvWoE5IEeOBXLaT_73OFw" name="getTheWinner" specification="_wArsQE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wAvWoU5IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(human.getOwnPions(plateau).size()&amp;gt;machine.getOwnPions(plateau).size())
+			return human;
+		else if(human.getOwnPions(plateau).size()&lt;machine.getOwnPions(plateau).size())
+			return machine;
+		else return null;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wA5usE5IEeOBXLaT_73OFw" name="getPlateau" specification="_wA2EUE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wA5usU5IEeOBXLaT_73OFw" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return plateau;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wBK0cE5IEeOBXLaT_73OFw" name="setPlateau" specification="_wBGjAE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_wBK0cU5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		this.plateau = plateau;
+	</body>
+      </ownedBehavior>
+      <interfaceRealization xmi:id="_v-ukcE5IEeOBXLaT_73OFw" name="modele.IGame" supplier="_vxuDME5IEeOBXLaT_73OFw" client="_vx63g05IEeOBXLaT_73OFw" contract="_vxuDME5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_v-_qME5IEeOBXLaT_73OFw" name="isValidMove" visibility="public" method="_v_GX4E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v_ARQE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v_ARQU5IEeOBXLaT_73OFw" key="documentation" value=" Demande au plateau de verifier que :&#xA; - la case de depart contient bien un pion&#xA; - que le pion appartient au joueur p&#xA; - que la case d'arrivee est vide&#xA; - que la distance est valide&#xA; &#xA; @param p : un joueur donne (homme ou machine)&#xA; @param c1 : coordonnee de la case de depart&#xA; @param c2 : coordonnee de la case d'arrivee&#xA; @return retourne vrai si le deplacement est valide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v_ARQk5IEeOBXLaT_73OFw" name="p" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_ARQ05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_ARRE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_ARRU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v_SlIE5IEeOBXLaT_73OFw" name="currentPlayerPlay" visibility="public" method="_v_XdoE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v_SlIU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v_SlIk5IEeOBXLaT_73OFw" key="documentation" value=" Methode qui fait joueur le joueur qui a le tour&#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @return vrai si ça a jouer; faux sinon&#xA; @throws InvalidCoord&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v_SlI05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_SlJE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v_SlJU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v_eLUE5IEeOBXLaT_73OFw" name="getCurrentPlayer" visibility="public" method="_v_hOoE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v_eLUU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v_eLUk5IEeOBXLaT_73OFw" key="documentation" value=" renvoie le joueur (entre la machine et l'humain) e qui c'est le tour de jouer&#xA; Pour cela elle appelle les methodes itsOwnTurn de player.&#xA; @return Le joueur e qui c'est le tour de jouer.&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v_eLU05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v_sNwE5IEeOBXLaT_73OFw" name="setCurrentPlayer" visibility="public" method="_v_vREE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v_sNwU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v_sNwk5IEeOBXLaT_73OFw" key="documentation" value=" Ajoute le joueur passe en parametre comme joueur qu a le jeu&#xA; @param p le joueur a qui on veut passer la main&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v_sNw05IEeOBXLaT_73OFw" name="p" type="_vxqY0E5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v_0woE5IEeOBXLaT_73OFw" name="changeCurrentPlayer" visibility="public" method="_v_4bAE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v_0woU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v_0wok5IEeOBXLaT_73OFw" key="documentation" value=" Change le joueur courant&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v_96kE5IEeOBXLaT_73OFw" name="getHumanPlayer" visibility="public" method="_wAA94E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v_96kU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v_96kk5IEeOBXLaT_73OFw" key="documentation" value=" @return l'instance du joueur humain&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v_96k05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wAHrkE5IEeOBXLaT_73OFw" name="getMachinePlayer" visibility="public" method="_wAKu4E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wAHrkU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wAHrkk5IEeOBXLaT_73OFw" key="documentation" value=" @return l'instance de la machine&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_wAHrk05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wAPnYE5IEeOBXLaT_73OFw" name="getLevel" visibility="public" method="_wASqsE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wAPnYU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wAPnYk5IEeOBXLaT_73OFw" key="documentation" value=" @return le niveau de la partie actuelleles exceptions java test&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_wAPnY05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wAXjME5IEeOBXLaT_73OFw" name="goToNextLevel" visibility="public" method="_wAbNkE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wAXjMU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wAXjMk5IEeOBXLaT_73OFw" key="documentation" value=" Verifie que la partie est finie et que l'humain a gagne&#xA; incremente de 1 le niveau&#xA; reconstruit le plateau&#xA; enregistre le plateau chez chaque joueur&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wAffAE5IEeOBXLaT_73OFw" name="itsEndOfTheGame" visibility="public" method="_wAjJYE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wAffAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wAffAk5IEeOBXLaT_73OFw" key="documentation" value=" Verifie chez le joueur actuel s'il y a encore des possibilites de jeu &#xA; @return vrai si la partie est finie, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_wAffA05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wArsQE5IEeOBXLaT_73OFw" name="getTheWinner" visibility="public" method="_wAvWoE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wArsQU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wArsQk5IEeOBXLaT_73OFw" key="documentation" value=" renvoie le joueur qui a le plus de pions.&#xA; Elle appelle la methode de calcul du nombre de pions de chaque joueur.&#xA; @return le gagnant de la partie&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_wArsQ05IEeOBXLaT_73OFw" type="_vxqY0E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wA2EUE5IEeOBXLaT_73OFw" name="getPlateau" visibility="public" method="_wA5usE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wA2EUU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wA2EUk5IEeOBXLaT_73OFw" key="documentation" value=" Obtenir le plateau du jeu&#xA; @return le plateau du jeu&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_wA2EU05IEeOBXLaT_73OFw" type="_vx63gE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wBGjAE5IEeOBXLaT_73OFw" name="setPlateau" visibility="public" method="_wBK0cE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_wBGjAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_wBGjAk5IEeOBXLaT_73OFw" key="documentation" value=" Ajoute le plateau du jeu&#xA; @param plateau qui est ele nouveau plateau a ajouter&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_wBGjA05IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_vx7ekE5IEeOBXLaT_73OFw" name="exception">
+      <packagedElement xmi:type="uml:Class" xmi:id="_vx8FoE5IEeOBXLaT_73OFw" name="InvalidCoord">
+        <generalization xmi:id="_wBPF4E5IEeOBXLaT_73OFw" general="_wBOe0E5IEeOBXLaT_73OFw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wEKeEE5IEeOBXLaT_73OFw" supplier="_vz830E5IEeOBXLaT_73OFw" client="_vwy2IE5IEeOBXLaT_73OFw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wELsME5IEeOBXLaT_73OFw" supplier="_vx7ekE5IEeOBXLaT_73OFw" client="_vwy2IE5IEeOBXLaT_73OFw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vx5CUE5IEeOBXLaT_73OFw" name="Plateau" clientDependency="_v6zGsE5IEeOBXLaT_73OFw">
+      <elementImport xmi:id="_v6zGsU5IEeOBXLaT_73OFw" visibility="private" importedElement="_vz9e4E5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_v6ztwE5IEeOBXLaT_73OFw" visibility="private" importedElement="_v0C-cE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_v6ztwU5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx8FoE5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v6-s4E5IEeOBXLaT_73OFw" name="getPlateau" specification="_v65NUE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v6_T8E5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return plateau;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v7KTEE5IEeOBXLaT_73OFw" name="getPlateauSize" specification="_v7EzgE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v7KTEU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return size;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v7bY0E5IEeOBXLaT_73OFw" name="isColorCase" specification="_v7WgUE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v7bY0U5IEeOBXLaT_73OFw" name="color" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v7bY0k5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v7bY005IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(c==null || c.getX()&amp;gt;size-1 || c.getX()&lt;0
+				|| c.getY()&amp;gt;size-1 || c.getY()&lt; 0)
+				throw new InvalidCoord(&quot;Les coordonnées rentrées ne sont pas valides&quot;);
+		if(plateau[c.getX()][c.getY()]==color) return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v7nmEE5IEeOBXLaT_73OFw" name="isEmptyCase" specification="_v7jUoE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v7nmEU5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v7nmEk5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(c==null || c.getX()&amp;gt;size-1 || c.getX()&lt;0
+				|| c.getY()&amp;gt;size-1 || c.getY()&lt; 0)
+				throw new InvalidCoord(&quot;Les coordonnées rentrées ne sont pas valides&quot;);
+		if(plateau[c.getX()][c.getY()]==1) return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v8BOsE5IEeOBXLaT_73OFw" name="isValidDistance" specification="_v77IEE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v8BOsU5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v8BOsk5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v8BOs05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(c1==null || c2==null || c1.getX()&amp;gt;size-1 || c1.getX()&lt;0
+				|| c1.getY()&amp;gt;size-1 || c1.getY()&lt; 0
+				|| c2.getX()&amp;gt;size-1 || c2.getX()&lt; 0
+				|| c2.getY()&amp;gt;size-1 || c2.getY()&lt; 0)
+				throw new InvalidCoord(&quot;L'une des coordonnées rentrées n'est pas valide&quot;);
+		if(c1.getDistance(c2)==1 || c1.getDistance(c2)==0) return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v8csgE5IEeOBXLaT_73OFw" name="moveAndDuplicate" specification="_v8XM8E5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v8csgU5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v8csgk5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(c1==null || c2==null || c1.getX()&amp;gt;size-1 || c1.getX()&lt;0
+				|| c1.getY()&amp;gt;size-1 || c1.getY()&lt; 0
+				|| c2.getX()&amp;gt;size-1 || c2.getX()&lt; 0
+				|| c2.getY()&amp;gt;size-1 || c2.getY()&lt; 0)
+				throw new InvalidCoord(&quot;L'une des coordonnées rentrées n'est pas valide&quot;);
+		plateau[c2.getX()][c2.getY()]=plateau[c1.getX()][c1.getY()];
+		changeNeighborsColor(c2);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v8wOgE5IEeOBXLaT_73OFw" name="moveWithoutDuplicate" specification="_v8tLME5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v8wOgU5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v8wOgk5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(c1==null || c2==null || c1.getX()&amp;gt;size-1 || c1.getX()&lt;0
+				|| c1.getY()&amp;gt;size-1 || c1.getY()&lt; 0
+				|| c2.getX()&amp;gt;size-1 || c2.getX()&lt; 0
+				|| c2.getY()&amp;gt;size-1 || c2.getY()&lt; 0)
+				throw new InvalidCoord(&quot;L'une des coordonnées rentrées n'est pas valide&quot;);
+		plateau[c2.getX()][c2.getY()]=plateau[c1.getX()][c1.getY()];
+		plateau[c1.getX()][c1.getY()]=1;
+		changeNeighborsColor(c2);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v89C0E5IEeOBXLaT_73OFw" name="getMovePossibilities" specification="_v85YcE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v89C0U5IEeOBXLaT_73OFw" name="coord" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v89p4E5IEeOBXLaT_73OFw" type="_v0C-cE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(coord==null || coord.getX()&amp;gt;size-1 || coord.getX()&lt;0
+				|| coord.getY()&amp;gt;size-1 || coord.getY()&lt; 0)
+				throw new InvalidCoord(&quot;Les coordonnées rentrées ne sont pas valides&quot;);
+		
+		if(!isMovable(coord)) return null;
+		
+		List&lt;ICoord&amp;gt; coords = new ArrayList&lt;ICoord&amp;gt;();
+		
+		//Déplacement sans sauts
+		//horizontal
+		if(!(coord.getX()+1 &amp;gt; size-1) &amp;&amp; (plateau[coord.getX()+1][coord.getY()]==1)) 
+			coords.add(new Coord(coord.getX()+1,coord.getY()));
+		if(!(coord.getX()-1 &lt; 0) &amp;&amp; (plateau[coord.getX()-1][coord.getY()]==1))
+			coords.add(new Coord(coord.getX()-1,coord.getY()));
+		//vertical
+		if(!(coord.getY()+1 &amp;gt; size-1) &amp;&amp; (plateau[coord.getX()][coord.getY()+1]==1))
+			coords.add(new Coord(coord.getX(),coord.getY()+1));
+		if(!(coord.getY()-1 &lt; 0) &amp;&amp; (plateau[coord.getX()][coord.getY()-1]==1))
+			coords.add(new Coord(coord.getX(),coord.getY()-1));
+		//diagonal
+		if(!(coord.getX()-1 &lt; 0) &amp;&amp; !(coord.getY()-1 &lt; 0)
+				&amp;&amp; plateau[coord.getX()-1][coord.getY()-1]==1)
+			coords.add(new Coord(coord.getX()-1,coord.getY()-1));
+		if(!(coord.getX()-1 &lt; 0) &amp;&amp; !(coord.getY()+1 &amp;gt; size-1) 
+				&amp;&amp; plateau[coord.getX()-1][coord.getY()+1]==1)
+			coords.add(new Coord(coord.getX()-1,coord.getY()+1));
+		if(!(coord.getX()+1 &amp;gt; size-1) &amp;&amp; !(coord.getY()+1 &amp;gt; size-1)
+				&amp;&amp; plateau[coord.getX()+1][coord.getY()+1]==1)
+			coords.add(new Coord(coord.getX()+1,coord.getY()+1));
+		if(!(coord.getX()+1 &amp;gt; size-1) &amp;&amp; !(coord.getY()-1 &lt; 0)
+				&amp;&amp; plateau[coord.getX()+1][coord.getY()-1]==1)
+			coords.add(new Coord(coord.getX()+1,coord.getY()-1));
+	
+		//Deplacements avec sauts de cases
+		//horizontal
+		if(!(coord.getX()+2 &amp;gt; size-1) &amp;&amp; (plateau[coord.getX()+2][coord.getY()]==1)) 
+			coords.add(new Coord(coord.getX()+2,coord.getY()));
+		if(!(coord.getX()-2 &lt; 0) &amp;&amp; (plateau[coord.getX()-2][coord.getY()]==1))
+			coords.add(new Coord(coord.getX()-2,coord.getY()));
+		//vertical
+		if(!(coord.getY()+2 &amp;gt; size-1) &amp;&amp; (plateau[coord.getX()][coord.getY()+2]==1))
+			coords.add(new Coord(coord.getX(),coord.getY()+2));
+		if(!(coord.getY()-2 &lt; 0) &amp;&amp; (plateau[coord.getX()][coord.getY()-2]==1))
+			coords.add(new Coord(coord.getX(),coord.getY()-2));
+		//diagonal
+		if(!(coord.getX()-2 &lt; 0) &amp;&amp; !(coord.getY()-2 &lt; 0)
+				&amp;&amp; plateau[coord.getX()-2][coord.getY()-2]==1)
+			coords.add(new Coord(coord.getX()-2,coord.getY()-2));
+		if(!(coord.getX()-2 &lt; 0) &amp;&amp; !(coord.getY()+2 &amp;gt; size-1) 
+				&amp;&amp; plateau[coord.getX()-2][coord.getY()+2]==1)
+			coords.add(new Coord(coord.getX()-2,coord.getY()+2));
+		if(!(coord.getX()+2 &amp;gt; size-1) &amp;&amp; !(coord.getY()+2 &amp;gt; size-1)
+				&amp;&amp; plateau[coord.getX()+2][coord.getY()+2]==1)
+			coords.add(new Coord(coord.getX()+2,coord.getY()+2));
+		if(!(coord.getX()+2 &amp;gt; size-1) &amp;&amp; !(coord.getY()-2 &lt; 0)
+				&amp;&amp; plateau[coord.getX()+2][coord.getY()-2]==1)
+			coords.add(new Coord(coord.getX()+2,coord.getY()-2));
+
+		return coords;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v9IpAE5IEeOBXLaT_73OFw" name="isMovable" specification="_v9FlsE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v9IpAU5IEeOBXLaT_73OFw" name="coord" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v9IpAk5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(coord==null || coord.getX()&amp;gt;size-1 || coord.getX()&lt;0
+				|| coord.getY()&amp;gt;size-1 || coord.getY()&lt; 0)
+				throw new InvalidCoord(&quot;Les coordonnées rentrées ne sont pas valides&quot;);
+		if(plateau[coord.getX()][coord.getY()]==2
+				|| plateau[coord.getX()][coord.getY()]==3) return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v9VdUE5IEeOBXLaT_73OFw" name="toString" specification="_v9Qk0E5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v9VdUU5IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		String s = &quot;\n&quot;;
+		for(int i = 0; i &lt; size; i++) {
+			for(int j = 0; j &lt; plateau[i].length; j++) {
+				s+=&quot;  &quot;;
+				s+=plateau[i][j]; 
+				if(j == size-1)
+					s+=&quot;\n&quot;;
+			}
+		}
+		return s;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v9hDgE5IEeOBXLaT_73OFw" name="getGrayCases" specification="_v9bj8E5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v9hDgU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return grayCases;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v9tQwE5IEeOBXLaT_73OFw" name="setGrayCases" specification="_v9oYQE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v9tQwU5IEeOBXLaT_73OFw" name="grayCases" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		this.grayCases = grayCases;
+	</body>
+      </ownedBehavior>
+      <interfaceRealization xmi:id="_v6zGsE5IEeOBXLaT_73OFw" name="modele.IPlateau" supplier="_vx63gE5IEeOBXLaT_73OFw" client="_vx5CUE5IEeOBXLaT_73OFw" contract="_vx63gE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_v65NUE5IEeOBXLaT_73OFw" name="getPlateau" visibility="public" method="_v6-s4E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v65NUU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v65NUk5IEeOBXLaT_73OFw" key="documentation" value=" @return le plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v65NU05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v7EzgE5IEeOBXLaT_73OFw" name="getPlateauSize" visibility="public" method="_v7KTEE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v7EzgU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v7Ezgk5IEeOBXLaT_73OFw" key="documentation" value=" @return la taille du plateau : 7 pour 7X7, 11 pour 11X11...&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v7Ezg05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v7WgUE5IEeOBXLaT_73OFw" name="isColorCase" visibility="public" method="_v7bY0E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v7WgUU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v7XHYE5IEeOBXLaT_73OFw" key="documentation" value=" verifie que la case de coordonnees c contient bien un pion et qu'il est de la couleur pass� en param�tre&#xA; &#xA; @param c&#xA;            case de depart&#xA; @param color&#xA;            l'int representant la couleur du pion (2 ou 3)&#xA; @return vraie si la case contient un pion valide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v7XHYU5IEeOBXLaT_73OFw" name="color" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v7XHYk5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v7XHY05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v7jUoE5IEeOBXLaT_73OFw" name="isEmptyCase" visibility="public" method="_v7nmEE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v7jUoU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v7jUok5IEeOBXLaT_73OFw" key="documentation" value=" verifie que la case de coordonnees c est vide&#xA; &#xA; @param c la coordonnee de verification&#xA; @return vraie si la case est vide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v7jUo05IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v7jUpE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v77IEE5IEeOBXLaT_73OFw" name="isValidDistance" visibility="public" method="_v8BOsE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v77vIE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v77vIU5IEeOBXLaT_73OFw" key="documentation" value=" verifie que la distance qui separe c1 de c2 ne depasse pas une case &#xA; en utilisant la methode getDistance de la classe Coord&#xA; &#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @return vrai si la distance est valide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v77vIk5IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v77vI05IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v77vJE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v8XM8E5IEeOBXLaT_73OFw" name="moveAndDuplicate" visibility="public" method="_v8csgE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v8XM8U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v8XM8k5IEeOBXLaT_73OFw" key="documentation" value=" ajoute un pion dans c2 tout en gardant le pion dans c1&#xA; change la couleur des voisins&#xA; &#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v8XM805IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v8XM9E5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v8tLME5IEeOBXLaT_73OFw" name="moveWithoutDuplicate" visibility="public" method="_v8wOgE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v8tLMU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v8tLMk5IEeOBXLaT_73OFw" key="documentation" value=" ajoute un pion dans c2 tout en supprimant celui dans c1&#xA; change la couleur des voisins&#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v8tLM05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v8tLNE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v85YcE5IEeOBXLaT_73OFw" name="getMovePossibilities" visibility="public" method="_v89C0E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v85YcU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v85Yck5IEeOBXLaT_73OFw" key="documentation" value=" Le nombre de possibilités de bouger de a la coordonnee coord&#xA; @param coord la case dont il faut voir les posssibilites de bouger&#xA; @return la list de coordonnees possibles ou coord peut se deplacer&#xA; @throws InvalidCoord&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v85Yc05IEeOBXLaT_73OFw" name="coord" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v85YdE5IEeOBXLaT_73OFw" type="_v0C-cE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v9FlsE5IEeOBXLaT_73OFw" name="isMovable" visibility="public" method="_v9IpAE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v9FlsU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v9Flsk5IEeOBXLaT_73OFw" key="documentation" value=" &#xA; @param coord coordonnee a verifier&#xA; @return vrai si la coordonee contient un pion et peut donc être bouge; Faux sinon&#xA; @throws InvalidCoord&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v9Fls05IEeOBXLaT_73OFw" name="coord" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v9FltE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v9Qk0E5IEeOBXLaT_73OFw" name="toString" visibility="public" method="_v9VdUE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v9Qk0U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v9Qk0k5IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour retoiurner le plateau sous formme d'un string decrivant la matrice plateau&#xA; @return un string qui decrit le plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v9Qk005IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v9bj8E5IEeOBXLaT_73OFw" name="getGrayCases" visibility="public" method="_v9hDgE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v9bj8U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v9cLAE5IEeOBXLaT_73OFw" key="documentation" value=" &#xA; @return le nombre de cases grises du plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v9cLAU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v9oYQE5IEeOBXLaT_73OFw" name="setGrayCases" visibility="public" method="_v9tQwE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v9oYQU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v9oYQk5IEeOBXLaT_73OFw" key="documentation" value=" Setteur du nombre de cases grises du plateau&#xA; @param grayCases le nombre de cases du plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v9oYQ05IEeOBXLaT_73OFw" name="grayCases" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_vx63gE5IEeOBXLaT_73OFw" name="IPlateau">
+      <eAnnotations xmi:id="_vx63gU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+        <details xmi:id="_vx63gk5IEeOBXLaT_73OFw" key="documentation" value=" Classe qui represente le plateau, permet de construire ce dernier et d'implementer toutes les&#xA; operations qui s'effectuent sur un vrai plateau.&#xA; &#xA; Un plateau est un tableau a deux dimensions d'entiers, comme suit :&#xA;0 : case grise&#xA;1 : case vide&#xA;2 : pion rouge&#xA;3 : pion bleu&#xA;Exemple :&#xA;exemplePlateau[7][7] = {&#xA;{2,1,1,1,1,1,3},&#xA;{1,1,1,1,1,1,1},&#xA;{1,1,1,0,1,1,1},&#xA;{1,1,0,1,0,1,1},&#xA;{1,1,1,0,1,1,1},&#xA;{1,1,1,1,1,1,1},&#xA;{3,1,1,1,1,1,2}};&#xA; @cons&#xA; Param :&#xA;    - niveau&#xA;    - taille&#xA; Post :&#xA; Construit un plateau, avec une taille donnee et un nombre de cases grises dependant du niveau.&#xA; Le nombre de cases grises est egale a 5*Niveau*(taille*taille)/100.&#xA; Leur emplacement sur le plateau est aleatoire. il ne faut juste pas qu'elle occupe un coin du plateau&#xA;  car les coins sont occupes par les pions de depart &#xA;"/>
+      </eAnnotations>
+      <ownedOperation xmi:id="_v9w7IE5IEeOBXLaT_73OFw" name="getPlateau">
+        <eAnnotations xmi:id="_v9w7IU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v9w7Ik5IEeOBXLaT_73OFw" key="documentation" value=" @return le plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v9w7I05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v9xiME5IEeOBXLaT_73OFw" name="getPlateauSize">
+        <eAnnotations xmi:id="_v9xiMU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v9xiMk5IEeOBXLaT_73OFw" key="documentation" value=" @return la taille du plateau : 7 pour 7X7, 11 pour 11X11...&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v9xiM05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v93o0E5IEeOBXLaT_73OFw" name="isColorCase">
+        <eAnnotations xmi:id="_v93o0U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v93o0k5IEeOBXLaT_73OFw" key="documentation" value=" verifie que la case de coordonnees c contient bien un pion et qu'il est de la couleur pass� en param�tre&#xA; &#xA; @param c&#xA;            case de depart&#xA; @param color&#xA;            l'int representant la couleur du pion (2 ou 3)&#xA; @return vraie si la case contient un pion valide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v93o005IEeOBXLaT_73OFw" name="color" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v93o1E5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v93o1U5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v98hUE5IEeOBXLaT_73OFw" name="isEmptyCase">
+        <eAnnotations xmi:id="_v98hUU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v98hUk5IEeOBXLaT_73OFw" key="documentation" value=" verifie que la case de coordonnees c est vide&#xA; &#xA; @param c la coordonnee de verification&#xA; @return vraie si la case est vide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v98hU05IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v98hVE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-FrQE5IEeOBXLaT_73OFw" name="isValidDistance">
+        <eAnnotations xmi:id="_v-FrQU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-FrQk5IEeOBXLaT_73OFw" key="documentation" value=" verifie que la distance qui separe c1 de c2 ne depasse pas une case &#xA; en utilisant la methode getDistance de la classe Coord&#xA; &#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @return vrai si la distance est valide, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-FrQ05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v-FrRE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v-FrRU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-RRcE5IEeOBXLaT_73OFw" name="moveAndDuplicate">
+        <eAnnotations xmi:id="_v-RRcU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-RRck5IEeOBXLaT_73OFw" key="documentation" value=" ajoute un pion dans c2 tout en gardant le pion dans c1&#xA; change la couleur des voisins&#xA; &#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-RRc05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v-RRdE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-Z0UE5IEeOBXLaT_73OFw" name="moveWithoutDuplicate">
+        <eAnnotations xmi:id="_v-Z0UU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-Z0Uk5IEeOBXLaT_73OFw" key="documentation" value=" ajoute un pion dans c2 tout en supprimant celui dans c1&#xA; change la couleur des voisins&#xA; @param c1 case de depart&#xA; @param c2 case d'arrivee&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-Z0U05IEeOBXLaT_73OFw" name="c1" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v-Z0VE5IEeOBXLaT_73OFw" name="c2" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-cQkE5IEeOBXLaT_73OFw" name="toString">
+        <eAnnotations xmi:id="_v-cQkU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-cQkk5IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour retoiurner le plateau sous formme d'un string decrivant la matrice plateau&#xA; @return un string qui decrit le plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-cQk05IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-desE5IEeOBXLaT_73OFw" name="getGrayCases" visibility="public">
+        <eAnnotations xmi:id="_v-desU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-desk5IEeOBXLaT_73OFw" key="documentation" value=" &#xA; @return le nombre de cases grises du plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-des05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-giAE5IEeOBXLaT_73OFw" name="setGrayCases" visibility="public">
+        <eAnnotations xmi:id="_v-giAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-giAk5IEeOBXLaT_73OFw" key="documentation" value=" Setteur du nombre de cases grises du plateau&#xA; @param grayCases le nombre de cases du plateau&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-giA05IEeOBXLaT_73OFw" name="grayCases" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-lagE5IEeOBXLaT_73OFw" name="getMovePossibilities">
+        <eAnnotations xmi:id="_v-lagU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-lagk5IEeOBXLaT_73OFw" key="documentation" value=" Le nombre de possibilités de bouger de a la coordonnee coord&#xA; @param coord la case dont il faut voir les posssibilites de bouger&#xA; @return la list de coordonnees possibles ou coord peut se deplacer&#xA; @throws InvalidCoord&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-lag05IEeOBXLaT_73OFw" name="coord" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v-lahE5IEeOBXLaT_73OFw" type="_v0C-cE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v-qTAE5IEeOBXLaT_73OFw" name="isMovable">
+        <eAnnotations xmi:id="_v-qTAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v-qTAk5IEeOBXLaT_73OFw" key="documentation" value=" &#xA; @param coord coordonnee a verifier&#xA; @return vrai si la coordonee contient un pion et peut donc être bouge; Faux sinon&#xA; @throws InvalidCoord&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v-qTA05IEeOBXLaT_73OFw" name="coord" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v-qTBE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_vxqY0E5IEeOBXLaT_73OFw" name="IPlayer">
+      <eAnnotations xmi:id="_vxqY0U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+        <details xmi:id="_vxqY0k5IEeOBXLaT_73OFw" key="documentation" value=" Interface qui represente aussi bien le joueur humain que la machine.&#xA; La difference entre un joueur humain et la machine c'est au niveau de la recuperation de leur jeu.&#xA; A savoir qu'on recupere le jeu d'un joueur via l'IHM alors que le jeu de la machine, &#xA; on le recupere via l'algorithme alpha-beta&#xA; Un joueur connait le plateau sur lequel il joue.&#xA; @Cons&#xA; Param :&#xA;  - Plateau&#xA; Post : &#xA;  coutnOwnPions = 2&#xA;"/>
+      </eAnnotations>
+      <ownedOperation xmi:id="_v30EIE5IEeOBXLaT_73OFw" name="countOwnPions">
+        <eAnnotations xmi:id="_v30EIU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v30EIk5IEeOBXLaT_73OFw" key="documentation" value=" @return le nombre de pions du joueur qui l'appelle.&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v30EI05IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v30EJE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v348oE5IEeOBXLaT_73OFw" name="getOwnPions">
+        <eAnnotations xmi:id="_v348oU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v348ok5IEeOBXLaT_73OFw" key="documentation" value=" renvoie les coordonnees des pions d'un joueur.&#xA; @return un tableau des coordonnees&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v348o05IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v348pE5IEeOBXLaT_73OFw" type="_v0C-cE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v35jsE5IEeOBXLaT_73OFw" name="itsOwnTurn">
+        <eAnnotations xmi:id="_v35jsU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v35jsk5IEeOBXLaT_73OFw" key="documentation" value=" @return vrai si c'est le tour du joueur qui l'appelle, faux sinon.&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v35js05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v3-cME5IEeOBXLaT_73OFw" name="hasPossibilitiesOfPlay">
+        <eAnnotations xmi:id="_v3-cMU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v3-cMk5IEeOBXLaT_73OFw" key="documentation" value=" @return vrai si le joueur peut encore jouer, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v3-cM05IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v3-cNE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4Fw8E5IEeOBXLaT_73OFw" name="itsOwnPion">
+        <eAnnotations xmi:id="_v4Fw8U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4Fw8k5IEeOBXLaT_73OFw" key="documentation" value="Cette methode verifie si le pion se trouvant e la coordonnee c appartient bien au joueur qui l'appelle&#xA; @param c : coordonnee du pion dont on cherche le proprietaire&#xA; @return vraie si le pion appartient au joueur appelant, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4Fw805IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v4Fw9E5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v4Fw9U5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4GYAE5IEeOBXLaT_73OFw" name="isOwnTurn" visibility="public">
+        <eAnnotations xmi:id="_v4GYAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4GYAk5IEeOBXLaT_73OFw" key="documentation" value=" Methode pour verifier si c'est le tours de ce joueur de jouer&#xA; @return vrai si c'est le tour du joueur de jouer; faux sinon&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4G_EE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4KCYE5IEeOBXLaT_73OFw" name="setOwnTurn" visibility="public">
+        <eAnnotations xmi:id="_v4KCYU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4KCYk5IEeOBXLaT_73OFw" key="documentation" value=" Affecter si c'est le tour de ce joueur de jouer&#xA; @param ownTurn qui peut etre vrai ou faux&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4KCY05IEeOBXLaT_73OFw" name="ownTurn" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4LQgE5IEeOBXLaT_73OFw" name="getColor" visibility="public">
+        <eAnnotations xmi:id="_v4LQgU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4LQgk5IEeOBXLaT_73OFw" key="documentation" value=" Obtenir la couleur de ce jouer&#xA; @return la valeur de la couleur de ce joueur&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4LQg05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4O64E5IEeOBXLaT_73OFw" name="setColor" visibility="public">
+        <eAnnotations xmi:id="_v4O64U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4O64k5IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour definir la couleur du joueur (le type de joueur)&#xA; @param color donne une valeur de couleur a ce joueur&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4O6405IEeOBXLaT_73OFw" name="color" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vxqY005IEeOBXLaT_73OFw" name="Coord" clientDependency="_v4RXIE5IEeOBXLaT_73OFw">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v4Yr4E5IEeOBXLaT_73OFw" name="getX" specification="_v4VBgE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v4Yr4U5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return X;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v4gAoE5IEeOBXLaT_73OFw" name="getY" specification="_v4cWQE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v4gnsE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return Y;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v4q_wE5IEeOBXLaT_73OFw" name="getDistance" specification="_v4n8cE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v4rm0E5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v4rm0U5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		
+		//Distance horizontale
+		if(X==c.getX()) return Math.abs(c.getY()-Y)-1;
+		//Diastance verticale
+		else if(Y==c.getY()) return Math.abs(c.getX()-X)-1;
+		//Distance diagonale
+		else {
+			int distance=-1, i=1;
+			//diagonale gauche vers le haut
+			while((X-i&amp;gt;=c.getX()) &amp;&amp; Y-i&amp;gt;=c.getY()) {
+				if((X-i==c.getX()) &amp;&amp; (Y-i==c.getY()))
+					distance=i-1;
+				i++;
+			}
+			i=1;
+			//diagonale droite vers le bas
+			while((X+i&lt;=c.getX()) &amp;&amp; Y+i&lt;=c.getY()) {
+				if((X+i==c.getX()) &amp;&amp; (Y+i==c.getY()))
+					distance=i-1;
+				i++;
+			}
+			i=1;
+			//diagonale gauche vers le bas
+			while((X+i&lt;=c.getX()) &amp;&amp; Y-i&amp;gt;=c.getY()) {
+				if((X+i==c.getX()) &amp;&amp; (Y-i==c.getY()))
+					distance=i-1;
+				i++;
+			}
+			i=1;
+			//diagonale droite vers le haut
+			while((X-i&amp;gt;=c.getX()) &amp;&amp; Y+i&lt;=c.getY()) {
+				if((X-i==c.getX()) &amp;&amp; (Y+i==c.getY()))
+					distance=i-1;
+				i++;
+			}
+			return distance;
+		}
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v40JsE5IEeOBXLaT_73OFw" name="setX" specification="_v4wfUE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v40JsU5IEeOBXLaT_73OFw" name="x" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		X = x;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v48skE5IEeOBXLaT_73OFw" name="setY" specification="_v45CME5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v49ToE5IEeOBXLaT_73OFw" name="y" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		Y = y;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v5FPcE5IEeOBXLaT_73OFw" name="equals" specification="_v5CzME5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v5FPcU5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5FPck5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(X==c.getX() &amp;&amp; Y==c.getY())
+			return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v5OZYE5IEeOBXLaT_73OFw" name="toString" specification="_v5LWEE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v5OZYU5IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return &quot;(&quot;+X+&quot;,&quot;+Y+&quot;)&quot;;
+	</body>
+      </ownedBehavior>
+      <interfaceRealization xmi:id="_v4RXIE5IEeOBXLaT_73OFw" name="modele.ICoord" supplier="_vxPiEE5IEeOBXLaT_73OFw" client="_vxqY005IEeOBXLaT_73OFw" contract="_vxPiEE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_v4VBgE5IEeOBXLaT_73OFw" name="getX" visibility="public" method="_v4Yr4E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v4VBgU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4VBgk5IEeOBXLaT_73OFw" key="documentation" value=" @return la position horizontale du pion&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4VBg05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4cWQE5IEeOBXLaT_73OFw" name="getY" visibility="public" method="_v4gAoE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v4cWQU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4cWQk5IEeOBXLaT_73OFw" key="documentation" value=" @return la distance verticale du pion&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4cWQ05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4n8cE5IEeOBXLaT_73OFw" name="getDistance" visibility="public" method="_v4q_wE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v4n8cU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4n8ck5IEeOBXLaT_73OFw" key="documentation" value=" @param c la coordonn�e avec laquelle on veut calculer la distance&#xA; @return le nombre de cases qui s�parent la case actuelle de la case entr�e en param�tre &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4n8c05IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v4n8dE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v4wfUE5IEeOBXLaT_73OFw" name="setX" visibility="public" method="_v40JsE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v4wfUU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v4wfUk5IEeOBXLaT_73OFw" key="documentation" value=" setteur de l'abscisse&#xA; @param x l'abcisse x&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v4wfU05IEeOBXLaT_73OFw" name="x" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v45CME5IEeOBXLaT_73OFw" name="setY" visibility="public" method="_v48skE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v45pQE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v45pQU5IEeOBXLaT_73OFw" key="documentation" value=" setteur de l'ordonnee&#xA; @param y l'ordonnee&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v45pQk5IEeOBXLaT_73OFw" name="y" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5CzME5IEeOBXLaT_73OFw" name="equals" visibility="public" method="_v5FPcE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v5CzMU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5CzMk5IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour comparer deux coordonnées&#xA; @param c la coordonnée avec laquelle comparer&#xA; @return true si les deux coordonnées sont égaux false sinon&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5CzM05IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v5CzNE5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v5LWEE5IEeOBXLaT_73OFw" name="toString" visibility="public" method="_v5OZYE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v5LWEU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v5LWEk5IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour obtenir la description d'une coordonnée sous forme d'un string&#xA; @return un string qui est la description d'une coordonnée et de la forme (x,y)&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v5LWE05IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_vxPiEE5IEeOBXLaT_73OFw" name="ICoord">
+      <eAnnotations xmi:id="_vxQJIE5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+        <details xmi:id="_vxQJIU5IEeOBXLaT_73OFw" key="documentation" value=" represente une coordonnee&#xA;"/>
+      </eAnnotations>
+      <ownedOperation xmi:id="_vzRiYE5IEeOBXLaT_73OFw" name="getX">
+        <eAnnotations xmi:id="_vzRiYU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzRiYk5IEeOBXLaT_73OFw" key="documentation" value=" @return la position horizontale du pion&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzSJcE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vzTXkE5IEeOBXLaT_73OFw" name="getY">
+        <eAnnotations xmi:id="_vzTXkU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzTXkk5IEeOBXLaT_73OFw" key="documentation" value=" @return la distance verticale du pion&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzTXk05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vzWa4E5IEeOBXLaT_73OFw" name="setX">
+        <eAnnotations xmi:id="_vzWa4U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzWa4k5IEeOBXLaT_73OFw" key="documentation" value=" setteur de l'abscisse&#xA; @param x l'abcisse x&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzWa405IEeOBXLaT_73OFw" name="x" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vzY3IE5IEeOBXLaT_73OFw" name="setY">
+        <eAnnotations xmi:id="_vzY3IU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzY3Ik5IEeOBXLaT_73OFw" key="documentation" value=" setteur de l'ordonnee&#xA; @param y l'ordonnee&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzY3I05IEeOBXLaT_73OFw" name="y" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vzchgE5IEeOBXLaT_73OFw" name="getDistance">
+        <eAnnotations xmi:id="_vzchgU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzchgk5IEeOBXLaT_73OFw" key="documentation" value=" @param c la coordonn�e avec laquelle on veut calculer la distance&#xA; @return le nombre de cases qui s�parent la case actuelle de la case entr�e en param�tre &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzchg05IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_vzchhE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vzgy8U5IEeOBXLaT_73OFw" name="equals">
+        <eAnnotations xmi:id="_vzgy8k5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzgy805IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour comparer deux coordonnées&#xA; @param c la coordonnée avec laquelle comparer&#xA; @return true si les deux coordonnées sont égaux false sinon&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzgy9E5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_vzgy9U5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_vzlEYE5IEeOBXLaT_73OFw" name="toString">
+        <eAnnotations xmi:id="_vzlEYU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_vzlEYk5IEeOBXLaT_73OFw" key="documentation" value=" Fonction pour obtenir la description d'une coordonnée sous forme d'un string&#xA; @return un string qui est la description d'une coordonnée et de la forme (x,y)&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_vzlEY05IEeOBXLaT_73OFw" type="_vzkdUk5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vxpKsE5IEeOBXLaT_73OFw" name="Player">
+      <elementImport xmi:id="_v0CXYE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vz9e4E5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_v0C-cU5IEeOBXLaT_73OFw" visibility="private" importedElement="_v0C-cE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_v0DlgE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx8FoE5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v1GuYE5IEeOBXLaT_73OFw" name="countOwnPions" specification="_v0wJEE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v1HVcE5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v1HVcU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		int pions=0;
+		int [][] p = plateau.getPlateau();
+		for(int i=0; i&lt;p.length; i++)
+			for(int j=0; j&lt;p[i].length; j++)
+				if(p[i][j]==color)
+					pions++;
+		return pions;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v1oS0E5IEeOBXLaT_73OFw" name="getOwnPions" specification="_v1fv8E5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v1oS0U5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v1oS0k5IEeOBXLaT_73OFw" type="_v0C-cE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		List&lt;ICoord&amp;gt; coords = new ArrayList&lt;ICoord&amp;gt;();
+		int [][] p = plateau.getPlateau();
+		for(int i=0; i&lt;p.length; i++)
+			for(int j=0; j&lt;p[i].length; j++)
+				if(p[i][j]==color)
+					coords.add(new Coord(i,j));
+		return coords;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v14xgE5IEeOBXLaT_73OFw" name="itsOwnTurn" specification="_v1wOoE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v14xgU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		if(ownTurn) return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v2WrkE5IEeOBXLaT_73OFw" name="hasPossibilitiesOfPlay" specification="_v2OvwE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v2WrkU5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v2Wrkk5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		boolean possibility = false;
+		List&lt;ICoord&amp;gt; coords=getOwnPions(plateau);
+		for(ICoord coord: coords)
+			if(plateau.getMovePossibilities(coord).size()!=0) possibility=true;
+		return possibility;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v3BZ8E5IEeOBXLaT_73OFw" name="itsOwnPion" specification="_v24QAE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v3BZ8U5IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v3BZ8k5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v3BZ805IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+//		// TODO Pas la peine d'aggréger le plateau. Gardons le metier propre
+//	}
+
+	@Override
+	public boolean itsOwnPion(ICoord c, IPlateau plateau) throws InvalidCoord {
+		if(c.getX()&amp;gt;plateau.getPlateauSize()-1 || c.getX()&lt;0
+				|| c.getY()&amp;gt;plateau.getPlateauSize()-1 || c.getY()&lt; 0)
+				throw new InvalidCoord(&quot;Les coordonnées rentrées ne sont pas valides&quot;);
+		if(plateau.getPlateau()[c.getX()][c.getY()]==color) return true;
+		else return false;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v3D2ME5IEeOBXLaT_73OFw" name="getColor" specification="_v3DPIE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v3D2MU5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return color;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v3MZEE5IEeOBXLaT_73OFw" name="setColor" specification="_v3LyAE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v3MZEU5IEeOBXLaT_73OFw" name="color" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		this.color=color;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v3bpoE5IEeOBXLaT_73OFw" name="isOwnTurn" specification="_v3U78E5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v3bpoU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		return ownTurn;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_v3sIUE5IEeOBXLaT_73OFw" name="setOwnTurn" specification="_v3mowE5IEeOBXLaT_73OFw">
+        <ownedParameter xmi:id="_v3sIUU5IEeOBXLaT_73OFw" name="ownTurn" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+        <language>JAVA</language>
+        <body>
+		this.ownTurn=ownTurn;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_v0wJEE5IEeOBXLaT_73OFw" name="countOwnPions" visibility="public" method="_v1GuYE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v0wJEU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v0wJEk5IEeOBXLaT_73OFw" key="documentation" value=" @return le nombre de pions du joueur qui l'appelle.&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v0wJE05IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v0wJFE5IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v1fv8E5IEeOBXLaT_73OFw" name="getOwnPions" visibility="public" method="_v1oS0E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v1fv8U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v1fv8k5IEeOBXLaT_73OFw" key="documentation" value=" renvoie les coordonnees des pions d'un joueur.&#xA; @return un tableau des coordonnees&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v1fv805IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v1fv9E5IEeOBXLaT_73OFw" type="_v0C-cE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v1wOoE5IEeOBXLaT_73OFw" name="itsOwnTurn" visibility="public" method="_v14xgE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v1wOoU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v1wOok5IEeOBXLaT_73OFw" key="documentation" value=" @return vrai si c'est le tour du joueur qui l'appelle, faux sinon.&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v1wOo05IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v2OvwE5IEeOBXLaT_73OFw" name="hasPossibilitiesOfPlay" visibility="public" method="_v2WrkE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v2OvwU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v2Ovwk5IEeOBXLaT_73OFw" key="documentation" value=" @return vrai si le joueur peut encore jouer, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v2Ovw05IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v2PW0E5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v24QAE5IEeOBXLaT_73OFw" name="itsOwnPion" visibility="public" method="_v3BZ8E5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v24QAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v24QAk5IEeOBXLaT_73OFw" key="documentation" value="Cette methode verifie si le pion se trouvant e la coordonnee c appartient bien au joueur qui l'appelle&#xA; @param c : coordonnee du pion dont on cherche le proprietaire&#xA; @return vraie si le pion appartient au joueur appelant, faux sinon&#xA; @throws InvalidCoord &#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v24QA05IEeOBXLaT_73OFw" name="c" type="_vxPiEE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v24QBE5IEeOBXLaT_73OFw" name="plateau" type="_vx63gE5IEeOBXLaT_73OFw"/>
+        <ownedParameter xmi:id="_v24QBU5IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v3DPIE5IEeOBXLaT_73OFw" name="getColor" visibility="public" method="_v3D2ME5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v3DPIU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v3DPIk5IEeOBXLaT_73OFw" key="documentation" value=" Getteur de la couleur du joueur&#xA; @return la couleur du joueur&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v3DPI05IEeOBXLaT_73OFw" type="_vzHKUE5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v3LyAE5IEeOBXLaT_73OFw" name="setColor" visibility="public" method="_v3MZEE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v3LyAU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v3LyAk5IEeOBXLaT_73OFw" key="documentation" value=" Setteur de la couleur du joueur&#xA; @param color Changer la couleur du joueur&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v3LyA05IEeOBXLaT_73OFw" name="color" type="_vzHKUE5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v3U78E5IEeOBXLaT_73OFw" name="isOwnTurn" visibility="public" method="_v3bpoE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v3U78U5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v3U78k5IEeOBXLaT_73OFw" key="documentation" value=" Methode pour verifier si c'est le tours de ce joueur de jouer&#xA; @return vrai si c'est le tour du joueur de jouer; faux sinon&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v3U7805IEeOBXLaT_73OFw" type="_vzgy8E5IEeOBXLaT_73OFw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_v3mowE5IEeOBXLaT_73OFw" name="setOwnTurn" visibility="public" method="_v3sIUE5IEeOBXLaT_73OFw">
+        <eAnnotations xmi:id="_v3mowU5IEeOBXLaT_73OFw" source="http://www.topcased.org/documentation">
+          <details xmi:id="_v3mowk5IEeOBXLaT_73OFw" key="documentation" value=" Affecter si c'est le tour de ce joueur de jouer&#xA; @param ownTurn qui peut etre vrai ou faux&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_v3mow05IEeOBXLaT_73OFw" name="ownTurn" type="_vzgy8E5IEeOBXLaT_73OFw"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vx8ssE5IEeOBXLaT_73OFw" name="test" clientDependency="_wEMTQE5IEeOBXLaT_73OFw _wEMTQU5IEeOBXLaT_73OFw _wEMTQk5IEeOBXLaT_73OFw _wEMTQ05IEeOBXLaT_73OFw _wEM6UE5IEeOBXLaT_73OFw">
+    <packagedElement xmi:type="uml:Class" xmi:id="_vx8ssU5IEeOBXLaT_73OFw" name="GameTest">
+      <elementImport xmi:id="_wBT-YE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vxqY005IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBT-YU5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx63g05IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBUlcE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vxuDME5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBVMgE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx8FoE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBVzkU5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBVzkE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBWaoE5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBVzkk5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBWao05IEeOBXLaT_73OFw" visibility="private" importedElement="_wBWaok5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wBXBsk5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBXBsU5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wBlrME5IEeOBXLaT_73OFw" name="gameTest" specification="_wBgysE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		Assert.assertNotNull(gameDeTest);
+		Assert.assertNotNull(gameDeTest1);
+		System.out.println(&quot;GAME DE TEST PLATEAU: &quot;
+				+gameDeTest.getPlateau().toString());
+		System.out.println(&quot;GAME DE TEST PLATEAU1: &quot;
+				+gameDeTest1.getPlateau().toString());
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wB0UsE5IEeOBXLaT_73OFw" name="gameTest1" specification="_wBwDQE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		gameDeTest.getPlateau().getPlateau()[1][1]=
+				gameDeTest.getPlateau().getPlateau()[2][2]=
+				gameDeTest.getPlateau().getPlateau()[6][1]=1;
+		Assert.assertFalse(gameDeTest.isValidMove(gameDeTest.getHumanPlayer(), 
+				new Coord(0,0), new Coord(0,0)));
+		Assert.assertTrue(gameDeTest.isValidMove(gameDeTest.getHumanPlayer(), 
+				new Coord(0,0), new Coord(1,1)));
+		Assert.assertTrue(gameDeTest.isValidMove(gameDeTest.getHumanPlayer(), 
+				new Coord(0,0), new Coord(2,2)));
+		Assert.assertTrue(gameDeTest.isValidMove(gameDeTest.getMachinePlayer(), 
+				new Coord(0,7), new Coord(1,6)));
+		Assert.assertFalse(gameDeTest.isValidMove(gameDeTest.getHumanPlayer(), 
+				new Coord(7,0), new Coord(6,1)));
+		Assert.assertTrue(gameDeTest.isValidMove(gameDeTest.getMachinePlayer(), 
+				new Coord(7,0), new Coord(6,1)));
+		//Déclencheur de l'exception
+		gameDeTest.isValidMove(gameDeTest.getHumanPlayer(), new Coord(9, 0), null);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wCBwEE5IEeOBXLaT_73OFw" name="gameTest2" specification="_wB9eoE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		Assert.assertNull(gameDeTest1.getCurrentPlayer());
+		gameDeTest1.setCurrentPlayer(gameDeTest1.getHumanPlayer());
+		Assert.assertNotNull(gameDeTest1.getCurrentPlayer());
+		gameDeTest1.changeCurrentPlayer();
+		gameDeTest1.setCurrentPlayer(gameDeTest1.getMachinePlayer());
+		Assert.assertEquals(gameDeTest1.getCurrentPlayer().getColor(), 3);
+		Assert.assertNull(gameDeTest1.getTheWinner());
+		
+		//La machine se bouge
+		Assert.assertTrue(gameDeTest1.isValidMove(gameDeTest1.getCurrentPlayer(), 
+				new Coord(7, 0), new Coord(6,1)));
+		Assert.assertFalse(gameDeTest1.currentPlayerPlay(new Coord(7, 0), 
+				new Coord(3, 3)));
+		Assert.assertTrue(gameDeTest1.currentPlayerPlay(new Coord(7, 0), 
+				new Coord(6, 1)));
+		//Le nombre de pions de la machine est nickel
+		System.out.println(&quot;ETAT DE JEUX GAME DE TEST PLATEAU: &quot;
+				+gameDeTest1.getPlateau().toString());
+		Assert.assertEquals(gameDeTest1.getCurrentPlayer().
+				countOwnPions(gameDeTest1.getPlateau()), 10);
+		//Le jeu est il fini
+		Assert.assertFalse(gameDeTest1.itsEndOfTheGame());
+		
+		//A l'humain de jouer
+		gameDeTest1.changeCurrentPlayer();
+		Assert.assertTrue(gameDeTest1.currentPlayerPlay(new Coord(7, 7), 
+				new Coord(5, 5)));
+		//Le nombre de pions de l'humain est nickel
+		System.out.println(&quot;ETAT DE JEUX GAME DE TEST PLATEAU: &quot;
+				+gameDeTest1.getPlateau().toString());
+		Assert.assertEquals(gameDeTest1.getCurrentPlayer().
+				countOwnPions(gameDeTest1.getPlateau()), 10);
+		Assert.assertFalse(gameDeTest1.currentPlayerPlay(new Coord(7, 7), 
+				new Coord(4, 4)));
+		
+		//A la machine de jouer
+		gameDeTest1.changeCurrentPlayer();
+		Assert.assertTrue(gameDeTest1.currentPlayerPlay(new Coord(0, 7), 
+				new Coord(2, 5)));
+		//Lee nombre de pions de l'humain est nickel
+		System.out.println(&quot;ETAT DE JEUX GAME DE TEST PLATEAU: &quot;
+				+gameDeTest1.getPlateau().toString());
+		Assert.assertEquals(gameDeTest1.getCurrentPlayer().
+				countOwnPions(gameDeTest1.getPlateau()), 18);
+		
+		//Le jeu est il fini
+		Assert.assertFalse(gameDeTest1.itsEndOfTheGame());
+		//Le gagnant à ce niveau: machine
+		Assert.assertEquals(gameDeTest1.getTheWinner().getColor(), 3);
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_wBgysE5IEeOBXLaT_73OFw" name="gameTest" visibility="public" method="_wBlrME5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wBwDQE5IEeOBXLaT_73OFw" name="gameTest1" visibility="public" method="_wB0UsE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wB9eoE5IEeOBXLaT_73OFw" name="gameTest2" visibility="public" method="_wCBwEE5IEeOBXLaT_73OFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vx_wAE5IEeOBXLaT_73OFw" name="PlayerTest">
+      <elementImport xmi:id="_wCGBgE5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBVzkE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCGBgU5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBVzkk5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCGokE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vxv4YE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCGokU5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx63gE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCGokk5IEeOBXLaT_73OFw" visibility="private" importedElement="_vxqY0E5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCGok05IEeOBXLaT_73OFw" visibility="private" importedElement="_vxrm8E5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCHPoE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx5CUE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCHPoU5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx8FoE5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wCS10E5IEeOBXLaT_73OFw" name="playerTest" specification="_wCOkYE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		System.out.println(&quot;PLATAU DE TEST: \n&quot;+plateauDeTest.toString());
+		Assert.assertEquals(human.countOwnPions(plateauDeTest), 2);
+		Assert.assertNotNull(human.getOwnPions(plateauDeTest));
+		Assert.assertEquals(machine.getOwnPions(plateauDeTest).size(), 2);
+		human.setOwnTurn(true);
+		Assert.assertTrue(human.itsOwnTurn());
+		Assert.assertFalse(machine.itsOwnTurn());
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wCecAE5IEeOBXLaT_73OFw" name="playerTest1" specification="_wCZjgE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		Assert.assertTrue(human.hasPossibilitiesOfPlay(plateauDeTest));
+		Assert.assertTrue(machine.hasPossibilitiesOfPlay(plateauDeTest));
+		IPlateau p = new Plateau(8);
+		for(int i=0; i&lt;p.getPlateau().length; i++)
+			for(int j=0; j&lt;p.getPlateau()[i].length; j++)
+				p.getPlateau()[i][j]=2;
+		System.out.println(p.toString());
+		Assert.assertFalse(machine.hasPossibilitiesOfPlay(p));
+		Assert.assertFalse(human.hasPossibilitiesOfPlay(p));
+		p.getPlateau()[1][2]=3;
+		Assert.assertFalse(human.hasPossibilitiesOfPlay(p));
+		p.getPlateau()[1][2]=1;
+		Assert.assertTrue(human.hasPossibilitiesOfPlay(p));
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_wCOkYE5IEeOBXLaT_73OFw" name="playerTest" visibility="public" method="_wCS10E5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wCZjgE5IEeOBXLaT_73OFw" name="playerTest1" visibility="public" method="_wCecAE5IEeOBXLaT_73OFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vyF2oE5IEeOBXLaT_73OFw" name="PlateauTest">
+      <elementImport xmi:id="_wCiGYE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vxqY005IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCitcE5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx63gE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCitcU5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx5CUE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCitck5IEeOBXLaT_73OFw" visibility="private" importedElement="_vx8FoE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCjUgE5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBVzkE5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCjUgU5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBVzkk5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCj7kE5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBWaok5IEeOBXLaT_73OFw"/>
+      <elementImport xmi:id="_wCj7kU5IEeOBXLaT_73OFw" visibility="private" importedElement="_wBXBsU5IEeOBXLaT_73OFw"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wCx-AE5IEeOBXLaT_73OFw" name="plateauTest" specification="_wCsecE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		IPlateau plateau=new Plateau(7);
+		Assert.assertEquals(7, plateau.getPlateauSize());
+		System.out.println(&quot;constructeur plateau(int): \n&quot;+plateau.toString());
+		IPlateau p1=new Plateau(7,3);
+		Assert.assertEquals(p1.getPlateau()[0][0], 2);
+		Assert.assertEquals(p1.getPlateau()[7-1][0], 3);
+		Assert.assertEquals(p1.getPlateau()[0][7-1], 3);
+		Assert.assertEquals(p1.getPlateau()[7-1][7-1], 2);
+		System.out.println(&quot;constructeur plateau(int,int): \n&quot;+p1.toString());
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wC_ZYE5IEeOBXLaT_73OFw" name="plateauTest1" specification="_wC6g4E5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		System.out.println(&quot;PLATEAU DE TEST\n&quot; + plateauDeTest.toString());
+		Assert.assertTrue(plateauDeTest.isColorCase(2, new Coord(0,0)));
+		Assert.assertTrue(plateauDeTest.isColorCase(3, new Coord(0,7)));
+		Assert.assertTrue(plateauDeTest.isColorCase(3, new Coord(7,0)));
+		Assert.assertTrue(plateauDeTest.isColorCase(2, new Coord(7,7)));
+		Assert.assertFalse(plateauDeTest.isColorCase(0, new Coord(7,7)));
+		plateauDeTest.isColorCase(1, new Coord(8,9));
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wDLmoE5IEeOBXLaT_73OFw" name="plateauTest2" specification="_wDH8QE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		plateauDeTest.getPlateau()[4][4]=1;
+		Assert.assertTrue(plateauDeTest.isEmptyCase(new Coord(4,4)));
+		Assert.assertFalse(plateauDeTest.isEmptyCase(new Coord(0,0)));
+		plateauDeTest.isEmptyCase(new Coord(-2,4));
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wDYa8E5IEeOBXLaT_73OFw" name="plateauTest3" specification="_wDUwkE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(0,0), new Coord(0,2)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(4,4), new Coord(6,4)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(4,4), new Coord(5,4)));
+		Assert.assertFalse(plateauDeTest.isValidDistance(new Coord(0,5), new Coord(0,2)));
+		Assert.assertFalse(plateauDeTest.isValidDistance(new Coord(4,4), new Coord(7,4)));
+		Assert.assertFalse(plateauDeTest.isValidDistance(new Coord(3,3), new Coord(0,2)));
+		Assert.assertFalse(plateauDeTest.isValidDistance(new Coord(5,2), new Coord(6,4)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(2,2), new Coord(3,3)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(2,2), new Coord(4,4)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(5,1), new Coord(3,3)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(3,3), new Coord(1,1)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(0,7), new Coord(2,5)));
+		Assert.assertFalse(plateauDeTest.isValidDistance(new Coord(0,0), new Coord(4,4)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(0,0), new Coord(2,2)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(7,7), new Coord(6,6)));
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(7,7), new Coord(5,5)));
+		//Déclencheur d'exception
+		Assert.assertTrue(plateauDeTest.isValidDistance(new Coord(9,0), new Coord(2,4)));
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wDnEcE5IEeOBXLaT_73OFw" name="plateauTest4" specification="_wDhk4E5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		plateauDeTest.moveAndDuplicate(new Coord(0,0), new Coord(4,4));
+		Assert.assertEquals(plateauDeTest.getPlateau()[4][4],2);
+		Assert.assertEquals(plateauDeTest.getPlateau()[0][0], 2);
+		plateauDeTest.moveAndDuplicate(null, new Coord(4,4));
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wD4KME5IEeOBXLaT_73OFw" name="plateauTest5" specification="_wDyqoE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		plateauDeTest.moveWithoutDuplicate(new Coord(0,0), new Coord(4,4));
+		Assert.assertEquals(plateauDeTest.getPlateau()[4][4],2);
+		Assert.assertEquals(plateauDeTest.getPlateau()[0][0], 1);
+		plateauDeTest.moveAndDuplicate(new Coord(4,4), null);
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wEIB0E5IEeOBXLaT_73OFw" name="plateauTest6" specification="_wEBUIE5IEeOBXLaT_73OFw">
+        <language>JAVA</language>
+        <body>
+		//Un plateau de test sans cases grises
+		IPlateau plateau=new Plateau(8);
+		System.out.println(&quot;Mon plateau sans cases grises:\n&quot;+plateau.toString());
+		Assert.assertEquals(plateau.getMovePossibilities(new Coord(0,0)).size(), 6);
+		Assert.assertNull(plateau.getMovePossibilities(new Coord(3,3)));
+		plateau.getPlateau()[3][3]=2;
+		Assert.assertEquals(plateau.getMovePossibilities(new Coord(3,3)).size(), 16);
+		plateau.getPlateau()[4][2]=plateau.getPlateau()[5][1]=0;
+		Assert.assertEquals(plateau.getMovePossibilities(new Coord(3,3)).size(), 14);
+		plateau.getPlateau()[5][5]=2;
+		Assert.assertEquals(plateau.getMovePossibilities(new Coord(3,3)).size(), 13);
+		//Déclencheur d'exception
+		plateau.getMovePossibilities(new Coord(9,0));
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_wCsecE5IEeOBXLaT_73OFw" name="plateauTest" visibility="public" method="_wCx-AE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wC6g4E5IEeOBXLaT_73OFw" name="plateauTest1" visibility="public" method="_wC_ZYE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wDH8QE5IEeOBXLaT_73OFw" name="plateauTest2" visibility="public" method="_wDLmoE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wDUwkE5IEeOBXLaT_73OFw" name="plateauTest3" visibility="public" method="_wDYa8E5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wDhk4E5IEeOBXLaT_73OFw" name="plateauTest4" visibility="public" method="_wDnEcE5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wDyqoE5IEeOBXLaT_73OFw" name="plateauTest5" visibility="public" method="_wD4KME5IEeOBXLaT_73OFw"/>
+      <ownedOperation xmi:id="_wEBUIE5IEeOBXLaT_73OFw" name="plateauTest6" visibility="public" method="_wEIB0E5IEeOBXLaT_73OFw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wEMTQE5IEeOBXLaT_73OFw" supplier="_vwy2IE5IEeOBXLaT_73OFw" client="_vx8ssE5IEeOBXLaT_73OFw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wEMTQU5IEeOBXLaT_73OFw" supplier="_vx7ekE5IEeOBXLaT_73OFw" client="_vx8ssE5IEeOBXLaT_73OFw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wEMTQk5IEeOBXLaT_73OFw" supplier="_wBVMgk5IEeOBXLaT_73OFw" client="_vx8ssE5IEeOBXLaT_73OFw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wEMTQ05IEeOBXLaT_73OFw" supplier="_wBWaoU5IEeOBXLaT_73OFw" client="_vx8ssE5IEeOBXLaT_73OFw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_wEM6UE5IEeOBXLaT_73OFw" supplier="_wBXBsE5IEeOBXLaT_73OFw" client="_vx8ssE5IEeOBXLaT_73OFw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_vzHKUE5IEeOBXLaT_73OFw" name="int"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_vzgy8E5IEeOBXLaT_73OFw" name="boolean"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vzkdUE5IEeOBXLaT_73OFw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_vzkdUU5IEeOBXLaT_73OFw" name="lang">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_vzkdUk5IEeOBXLaT_73OFw" name="String"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wBOe0E5IEeOBXLaT_73OFw" name="Exception"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_vz830E5IEeOBXLaT_73OFw" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_vz9e4E5IEeOBXLaT_73OFw" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_v0C-cE5IEeOBXLaT_73OFw" name="List"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_v5W8QE5IEeOBXLaT_73OFw" name="Random"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_wBVMgU5IEeOBXLaT_73OFw" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wBVMgk5IEeOBXLaT_73OFw" name="junit">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wBVzkE5IEeOBXLaT_73OFw" name="Assert"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_wBVzkk5IEeOBXLaT_73OFw" name="Test"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wBWaoU5IEeOBXLaT_73OFw" name="runner">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_wBWaok5IEeOBXLaT_73OFw" name="RunWith"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wBXBsE5IEeOBXLaT_73OFw" name="runners">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_wBXBsU5IEeOBXLaT_73OFw" name="JUnit4"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lGkdME5KEeOBXLaT_73OFw" name="Usage1" supplier="_vxqY0E5IEeOBXLaT_73OFw" client="_vx63g05IEeOBXLaT_73OFw"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_m1ljwE5KEeOBXLaT_73OFw" name="Usage2" supplier="_vx63gE5IEeOBXLaT_73OFw" client="_vx63g05IEeOBXLaT_73OFw"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_xcDMIE5KEeOBXLaT_73OFw" name="Usage3" supplier="_vx5CUE5IEeOBXLaT_73OFw" client="_vx63g05IEeOBXLaT_73OFw"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HdXuQE5LEeOBXLaT_73OFw" name="Usage4" supplier="_vxPiEE5IEeOBXLaT_73OFw" client="_vx63g05IEeOBXLaT_73OFw"/>
+</uml:Model>
